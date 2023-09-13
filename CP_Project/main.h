@@ -70,3 +70,7 @@ void ChangeValue();
 void IndexChar();
 
 void AlphaNumber();
+
+void Enum();
+
+void TwoDimension();
