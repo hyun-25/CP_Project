@@ -1,4 +1,4 @@
-#include "io.h"
+﻿#include "io.h"
 
 int GuGuDan(int Dan) {
   int result = 0;
