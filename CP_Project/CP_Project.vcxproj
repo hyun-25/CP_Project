@@ -138,11 +138,12 @@
     <ClCompile Include="ch06-1_example.cpp" />
     <ClCompile Include="ch06_string.cpp" />
     <ClCompile Include="ch07_structure.cpp" />
+    <ClCompile Include="ch08_Pointer.cpp" />
     <ClCompile Include="CP_Project.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="io.h" />
-    <ClInclude Include="main.h" />
+    <ClInclude Include="CP_Project.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
