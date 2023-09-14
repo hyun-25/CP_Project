@@ -60,12 +60,18 @@
     <ClCompile Include="MiniProject_02.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Ch10_Class.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CP_Project.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="io.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ch10_Class.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
