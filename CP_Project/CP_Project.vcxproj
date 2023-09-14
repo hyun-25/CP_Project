@@ -147,6 +147,9 @@
     <ClInclude Include="io.h" />
     <ClInclude Include="CP_Project.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Basic.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
