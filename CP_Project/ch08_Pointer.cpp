@@ -42,7 +42,7 @@ void PointerDefine()
 	cout << "*Array + 1 : " << *Array + 1 << endl;
 
 	cout << "*(Array + 1) : " << *(Array + 1) << endl;
-	cout << "*(pArray + 1) : " << *(pArray + 1) << endl;
+	cout << "*(pArray + 1) : m m " << *(pArray + 1) << endl;
 
 
 	
