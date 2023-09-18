@@ -127,6 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Arithmatic.cpp" />
+    <ClCompile Include="Atv.cpp" />
+    <ClCompile Include="Bike.cpp" />
     <ClCompile Include="ch01_variable.cpp" />
     <ClCompile Include="ch02_operation.cpp" />
     <ClCompile Include="ch03_statement.cpp" />
@@ -140,14 +144,21 @@
     <ClCompile Include="ch07_structure.cpp" />
     <ClCompile Include="ch08_Pointer.cpp" />
     <ClCompile Include="Ch09_Dynamic.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
     <ClCompile Include="Ch10_Class.cpp" />
     <ClCompile Include="CP_Project.cpp" />
     <ClCompile Include="MiniProject_02.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="Arithmatic.h" />
+    <ClInclude Include="Atv.h" />
+    <ClInclude Include="Auto.h" />
+    <ClInclude Include="Bike.h" />
     <ClInclude Include="Ch10_Class.h" />
     <ClInclude Include="io.h" />
     <ClInclude Include="CP_Project.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Basic.md" />
