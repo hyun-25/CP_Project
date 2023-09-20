@@ -1,24 +1,28 @@
-#include <iostream>
+ï»¿#include <iostream>
 
 #include "Vehicle.h"
 
 using namespace std;
 
 
-//Constructor Á¤ÀÇ
-Vehicle :: Vehicle(int _Year, int _Price)
+Vehicle::Vehicle()
+{
+	cout << "Vehicle Constructor" << endl;
+}
+
+Vehicle::Vehicle(int _Year, int _Price)
 {
 	Year = _Year;
 	Price = _Price;
 
-	cout << "Ãâ°í ÀÚµ¿Â÷ ¿¬½Ä : ";
+	cout << "ì¶œê³  ìžë™ì°¨ì—°ì‹: ";
 	PrintYear();
 }
-//Destructor Á¤ÀÇ
-Vehicle :: ~Vehicle() {
 
-	cout << "ÀÚµ¿Â÷ È®ÀÎ" << endl;
-
+// Destructor
+Vehicle::~Vehicle()
+{
+	cout << "ìžë™ì°¨ í™•ì¸" << endl;
 }
 
 void Vehicle::PrintYear()
@@ -36,8 +40,8 @@ int Vehicle::GetYear()
 {
 	return Year;
 }
+
 void Vehicle::SetYear(int newYear)
 {
 	Year = newYear;
 }
-

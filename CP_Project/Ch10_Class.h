@@ -6,16 +6,12 @@ class Car
 	int Year;
 	int Velocity;
 
- public :
-
-	 Car(int V)
-	 {
-		 //Name[30] = N;
-		 //Year = Y;
-		 Velocity = V;
-
-	 }
+public:
+	
+	Car(int V)
+	{
+		Velocity = V;
+	}
 	void DriveVelocity();
 	void DriveTime();
-
 };

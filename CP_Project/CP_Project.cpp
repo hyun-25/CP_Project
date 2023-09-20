@@ -1,80 +1,146 @@
-ï»¿// CP_Project.cpp : ì´ íŒŒì¼ì—ëŠ” 'main' í•¨ìˆ˜ê°€ í¬í•¨ë©ë‹ˆë‹¤. ê±°ê¸°ì„œ í”„ë¡œê·¸ë¨ ì‹¤í–‰ì´ ì‹œì‘ë˜ê³  ì¢…ë£Œë©ë‹ˆë‹¤.
+// CP_Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include "io.h"
+using namespace std;
 
-#include"CP_Project.h"
-#include "Ch10_Class.h"
+#include "CP_Project.h"
+#include "io.h"
+//#include "Ch10_Class.h"
 #include "Vehicle.h"
 #include "Animal.h"
 #include "Bike.h"
 #include "Atv.h"
 #include "Arithmatic.h"
 #include "Auto.h"
+#include "Ch14_VirtualChild.h"
+#include "Ch14_VirtualParent.h"
+#include "Ch15_PureVirtualChild.h"
+#include"Ch15_PureVirtualParent.h"
 
 int main()
 {
-    //std::cout << "Hello!\n";
-    //PointerDefine();
-    //DynamicVariable();
-    //CountNumber();
-    //AlphaNumber();
-    //BallInsert();
-    //BallSwap();
-    
-    //class ì •ì  ì„ ì–¸
-    Vehicle Ray(2003, 12000000);
+    std::cout << "Hello World!\n";
+
+    // class Á¤Àû ¼±¾ğ
+ 
+    Vehicle Ray(2023, 12000000);
     Ray.PrintPrice();
 
     Ray.Price = 10000000;
     Ray.PrintPrice();
 
     Ray.SetYear(2021);
-    
+
     cout << Ray.GetYear() << endl;
 
-    // class ë™ì  ì„ ì–¸(ìƒì„±)
+    Vehicle Sonata;
+
+
+    // class µ¿Àû ¼±¾ğ(»ı¼º)
     Animal* Dog = new Animal;
     Dog->PrintFinger();
 
     delete Dog;
 
-    //ìì‹ í´ë˜ìŠ¤ ìƒì„±
+    // ÀÚ½Ä Å¬·¡½º »ı¼º
     Atv Moto;
-    //ìƒì†ë°›ì€ Bike classì˜ ë©¤ë²„
+
+    // »ó¼Ó¹ŞÀº Bike classÀÇ ¸â¹ö
     Moto.PrintTire();
     cout << Moto.Price << endl;
 
-    //Atv class ë©¤ë²„
+    // Atv class ¸â¹ö
     Moto.PrintPrice();
 
-    // í•¨ìˆ˜ ì˜¤ë²„ë¡œë”©
-
+    // ÇÔ¼ö ¿À¹ö·Îµù
     Arithmatic Expression;
-    Expression.Sum(50);
-    Expression.Sum(50.123f);
-    Expression.Sum(60, 70);
 
-    //í•¨ìˆ˜ ì˜¤ë²„ë¼ì´ë”©
+    Expression.Sum(50);
+
+    Expression.Sum(50.123f);
+
+    Expression.Sum(60, 70);
+  
+
+    // ÇÔ¼ö ¿À¹ö¶óÀÌµù
     Moto.Print();
 
-    //ìƒì„±ìê°€ ëª…ì‹œì ìœ¼ë¡œ ì„ ì–¸
-    //ìì‹ í´ë˜ìŠ¤ ì„ ì–¸ : ëª…ì‹œì  ì„ ì–¸
-    Auto Mobile();
-    Mobile().PrintPrice();
+    // »ı¼ºÀÚ°¡ ¸í½ÃÀûÀ¸·Î ¼±¾ğ
+    // ÀÚ½Ä Å¬·¡½º ¼±¾ğ : ¸í½ÃÀû ¼±¾ğ
+
+    cout << "-----------------------------" << endl;
+    Auto Mobile;
+
+    Auto Avante(2024, 10000000);
 
 
-    
+    cout << "-----------------------------" << endl;
+    //ArrayClass();
+
+    //StringClass();
+
+    VectorClass();
+
+  
+    VirtualParent* Parent = new VirtualParent;
+    VirtualChild* Child = new VirtualChild;
+
+    Parent->PrintClass();
+
+    Child->PrintClass(); // Overriding ÀÛµ¿
+
+    Parent = Child;
+
+    Parent->PrintClass();
+
+    VirtualParent2* Parent2 = new VirtualParent2;
+    VirtualChild2* Child2 = new VirtualChild2;
+
+    Parent2->PrintClass();
+
+    Child2->PrintClass(); // Overriding ÀÛµ¿
+
+    Parent2 = Child2;
+
+    Parent2->PrintClass();
+
+    cout << "-----------------------------" << endl;
+
+    //PureVirtualParent PureParent; =>Ãß»óÅ¬·¡½º´Â ´Üµ¶À¸·Î °´Ã¼ »ı¼ºÇÒ ¼ö ¾øÀ½
+    //Ãß»óÅ¬·¡½º¸¦ »ó¼Ó¹Ş´Â ÀÚ½Ä Å¬·¡½º´Â ¼ø¼ö °¡»óÇÔ¼ö¸¦ ÀçÁ¤ÀÇ ÇØ¾ßÇÔ
+    PureVirtualChild PureChild; 
+    PureChild.Print();
+    PureChild.PrintClass();
+
+    cout << "-----------------------------" << endl;
+
+    cout << SumNumber(3, 2) << endl;
+    cout << SumNumber(3.231f, 5.645f) << endl;
+
+
+    cout << SumType(10, 20) << endl;
+    cout << SumType(10.567, 20.371);
+
 }
 
-// í”„ë¡œê·¸ë¨ ì‹¤í–‰: <Ctrl+F5> ë˜ëŠ” [ë””ë²„ê·¸] > [ë””ë²„ê¹…í•˜ì§€ ì•Šê³  ì‹œì‘] ë©”ë‰´
-// í”„ë¡œê·¸ë¨ ë””ë²„ê·¸: <F5> í‚¤ ë˜ëŠ” [ë””ë²„ê·¸] > [ë””ë²„ê¹… ì‹œì‘] ë©”ë‰´
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
 
-// ì‹œì‘ì„ ìœ„í•œ íŒ: 
-//   1. [ì†”ë£¨ì…˜ íƒìƒ‰ê¸°] ì°½ì„ ì‚¬ìš©í•˜ì—¬ íŒŒì¼ì„ ì¶”ê°€/ê´€ë¦¬í•©ë‹ˆë‹¤.
-//   2. [íŒ€ íƒìƒ‰ê¸°] ì°½ì„ ì‚¬ìš©í•˜ì—¬ ì†ŒìŠ¤ ì œì–´ì— ì—°ê²°í•©ë‹ˆë‹¤.
-//   3. [ì¶œë ¥] ì°½ì„ ì‚¬ìš©í•˜ì—¬ ë¹Œë“œ ì¶œë ¥ ë° ê¸°íƒ€ ë©”ì‹œì§€ë¥¼ í™•ì¸í•©ë‹ˆë‹¤.
-//   4. [ì˜¤ë¥˜ ëª©ë¡] ì°½ì„ ì‚¬ìš©í•˜ì—¬ ì˜¤ë¥˜ë¥¼ ë´…ë‹ˆë‹¤.
-//   5. [í”„ë¡œì íŠ¸] > [ìƒˆ í•­ëª© ì¶”ê°€]ë¡œ ì´ë™í•˜ì—¬ ìƒˆ ì½”ë“œ íŒŒì¼ì„ ë§Œë“¤ê±°ë‚˜, [í”„ë¡œì íŠ¸] > [ê¸°ì¡´ í•­ëª© ì¶”ê°€]ë¡œ ì´ë™í•˜ì—¬ ê¸°ì¡´ ì½”ë“œ íŒŒì¼ì„ í”„ë¡œì íŠ¸ì— ì¶”ê°€í•©ë‹ˆë‹¤.
-//   6. ë‚˜ì¤‘ì— ì´ í”„ë¡œì íŠ¸ë¥¼ ë‹¤ì‹œ ì—´ë ¤ë©´ [íŒŒì¼] > [ì—´ê¸°] > [í”„ë¡œì íŠ¸]ë¡œ ì´ë™í•˜ê³  .sln íŒŒì¼ì„ ì„ íƒí•©ë‹ˆë‹¤.
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+// ÇÁ·Î±×·¥ ½ÇÇà: <Ctrl+F5> ¶Ç´Â [µğ¹ö±×] > [µğ¹ö±ëÇÏÁö ¾Ê°í ½ÃÀÛ] ¸Ş´º
+// ÇÁ·Î±×·¥ µğ¹ö±×: <F5> Å° ¶Ç´Â [µğ¹ö±×] > [µğ¹ö±ë ½ÃÀÛ] ¸Ş´º
+
+// ½ÃÀÛÀ» À§ÇÑ ÆÁ: 
+//   1. [¼Ö·ç¼Ç Å½»ö±â] Ã¢À» »ç¿ëÇÏ¿© ÆÄÀÏÀ» Ãß°¡/°ü¸®ÇÕ´Ï´Ù.
+//   2. [ÆÀ Å½»ö±â] Ã¢À» »ç¿ëÇÏ¿© ¼Ò½º Á¦¾î¿¡ ¿¬°áÇÕ´Ï´Ù.
+//   3. [Ãâ·Â] Ã¢À» »ç¿ëÇÏ¿© ºôµå Ãâ·Â ¹× ±âÅ¸ ¸Ş½ÃÁö¸¦ È®ÀÎÇÕ´Ï´Ù.
+//   4. [¿À·ù ¸ñ·Ï] Ã¢À» »ç¿ëÇÏ¿© ¿À·ù¸¦ º¾´Ï´Ù.
+//   5. [ÇÁ·ÎÁ§Æ®] > [»õ Ç×¸ñ Ãß°¡]·Î ÀÌµ¿ÇÏ¿© »õ ÄÚµå ÆÄÀÏÀ» ¸¸µé°Å³ª, [ÇÁ·ÎÁ§Æ®] > [±âÁ¸ Ç×¸ñ Ãß°¡]·Î ÀÌµ¿ÇÏ¿© ±âÁ¸ ÄÚµå ÆÄÀÏÀ» ÇÁ·ÎÁ§Æ®¿¡ Ãß°¡ÇÕ´Ï´Ù.
+//   6. ³ªÁß¿¡ ÀÌ ÇÁ·ÎÁ§Æ®¸¦ ´Ù½Ã ¿­·Á¸é [ÆÄÀÏ] > [¿­±â] > [ÇÁ·ÎÁ§Æ®]·Î ÀÌµ¿ÇÏ°í .sln ÆÄÀÏÀ» ¼±ÅÃÇÕ´Ï´Ù.

@@ -11,6 +11,7 @@ private :
 public :
 	int Price;
 	// Constructor 識情
+	Vehicle();
 	Vehicle(int _Year, int _Price);
 
 	//Destructor 識情
